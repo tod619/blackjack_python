@@ -46,3 +46,9 @@ class Hand(object):
     def give(self, card, other_hand):
         self.cards.remove(card)
         other_hand.add(card)
+
+
+# main
+card1 = Card(rank="A", suit="")
+print("Printing a card object")
+print(card1)
