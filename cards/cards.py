@@ -86,4 +86,9 @@ print("Your Hand: ")
 print(your_hand)
 print("My Hand:")
 print(my_hand)
+
+# Clear my hand
+my_hand.clear()
+print("My hand after clearing it")
+print(my_hand)
 input("Press enter to exit!")
