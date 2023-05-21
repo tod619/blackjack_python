@@ -32,7 +32,7 @@ class Hand(object):
         if self.cards:
             rep = ""
             for card in self.cards:
-                rep += str(card) + " "
+                rep += f"{str(card)}  "
         else:
             rep = "<empty>"
         return rep
@@ -67,4 +67,12 @@ print(card5)
 # create a hand object and print it
 my_hand = Hand()
 print("\nPrinting my_hand before I give it anny cards: ")
+print(my_hand)
+
+my_hand.add(card1)
+my_hand.add(card2)
+my_hand.add(card3)
+my_hand.add(card4)
+my_hand.add(card5)
+print("\nPrinting my-hand after adding 5 cards: ")
 print(my_hand)
