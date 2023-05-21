@@ -49,6 +49,17 @@ class Hand(object):
 
 
 # main
-card1 = Card(rank="A", suit="")
+card1 = Card(rank="A", suit="c")
 print("Printing a card object")
 print(card1)
+
+# Creating more cards + printing them
+card2 = Card(rank="2", suit="c")
+card3 = Card(rank="3", suit="c")
+card4 = Card(rank="4", suit="c")
+card5 = Card(rank="5", suit="c")
+
+print(card2)
+print(card3)
+print(card4)
+print(card5)
