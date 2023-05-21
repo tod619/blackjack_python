@@ -63,3 +63,8 @@ print(card2)
 print(card3)
 print(card4)
 print(card5)
+
+# create a hand object and print it
+my_hand = Hand()
+print("\nPrinting my_hand before I give it anny cards: ")
+print(my_hand)
