@@ -17,6 +17,13 @@ class Card():
         return rep
 
 
+class Unprintable_Card(Card):
+    """A card that won't reveal its roan or suit when printed"""
+
+    def __str__(self):
+        return "<unprintable>"
+
+
 class Hand():
     """A hand of playing cards"""
 
@@ -87,6 +94,10 @@ deck1 = Deck()
 deck1.create_deck()
 # print(deck1)
 deck1.shuffle()
-print(deck1)
+# print(deck1)
+
+# Create an unprintable card and print it
+card6 = Unprintable_Card(Card.RANKS[0], Card.SUITS[1])
+print(card6)
 
 input("\nPress enter to exit the program ")
