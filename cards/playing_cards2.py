@@ -42,6 +42,30 @@ class Hand():
         self.cards.remove(card)
         other_hand.add(card)
 
+# Create a deck class that inherits from the Hand class
+
+
+class Deck(Hand):
+    """A Deck of playing cards"""
+
+    def create_deck(self):
+        for suit in Card.SUITS:
+            for rank in Card.RANKS:
+                self.add(Card(rank, suit))
+
+    def shuffle(self):
+        import random
+        random.shuffle(self.cards)
+
+    def deal(self, hands, per_hand=1):
+        for rounds in range(per_hand):
+            for hand in hands:
+                if self.cards:
+                    top_card = self.cards[0]
+                    self.give(top_card, hand)
+                else:
+                    print("Can't deal any more. Out of cards!")
+
 
 card1 = Card(Card.RANKS[1], Card.SUITS[3])
 card2 = Card(Card.RANKS[1], Card.SUITS[0])
@@ -57,6 +81,12 @@ my_hand.add(card3)
 my_hand.add(card4)
 my_hand.add(card5)
 
-print(my_hand)
+# print(my_hand)
+
+deck1 = Deck()
+deck1.create_deck()
+# print(deck1)
+deck1.shuffle()
+print(deck1)
 
 input("\nPress enter to exit the program ")
