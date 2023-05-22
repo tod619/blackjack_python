@@ -16,12 +16,34 @@ class Card():
         rep = f"{self.rank}:{self.suit}"
         return rep
 
+# Unprintable card inherits from Card class
+
 
 class Unprintable_Card(Card):
     """A card that won't reveal its roan or suit when printed"""
 
     def __str__(self):
         return "<unprintable>"
+
+# Card flipping class  inherits from Card class
+
+
+class Flippable_Card(Card):
+    """A Card that can be face up or face down"""
+
+    def __init__(self, rank, suit, face_up=True):
+        super(Flippable_Card, self).__init__(rank, suit)
+        self.is_face_up = face_up
+
+    def __str__(self):
+        if self.is_face_up:
+            rep = super(Flippable_Card, self).__str__()
+        else:
+            rep = "XX"
+        return rep
+
+    def flip(self):
+        self.is_face_up = not self.is_face_up
 
 
 class Hand():
@@ -99,5 +121,15 @@ deck1.shuffle()
 # Create an unprintable card and print it
 card6 = Unprintable_Card(Card.RANKS[0], Card.SUITS[1])
 print(card6)
+
+card7 = Flippable_Card(Card.RANKS[0], Card.SUITS[0])
+# print card7 face up
+print(card7)  # A of Clubs
+# flip card7 and print it
+card7.flip()
+print(card7)
+# flip it back to face up
+card7.flip()
+print(card7)
 
 input("\nPress enter to exit the program ")
