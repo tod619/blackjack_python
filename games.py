@@ -11,6 +11,7 @@ class Player():
 
     def __str__(self):
         rep = f"{self.name}:\t {str(self.score)}"
+        return rep
 
 # create functions
 
