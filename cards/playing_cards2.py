@@ -16,6 +16,14 @@ class Card():
         rep = f"{self.rank}:{self.suit}"
         return rep
 
+    def card_value(self):
+        """ Get the value of the playing card """
+        value = Card.RANKS.index(self.rank) + 1
+        if value > 10:
+            value = 10
+
+        return value
+
 # Unprintable card inherits from Card class
 
 
@@ -131,5 +139,7 @@ print(card7)
 # flip it back to face up
 card7.flip()
 print(card7)
+print(f"The value of card 1 is {card1.card_value()}")
+print(f"the value of card 7 is: {card7.card_value()}")
 
 input("\nPress enter to exit the program ")
